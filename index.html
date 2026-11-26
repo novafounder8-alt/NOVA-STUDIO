@@ -407,13 +407,143 @@ body {
 .service-card a {
   color: white;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 12p;
   font-weight: bold;
 }
 
 .service-card a:hover {
   text-decoration: underline;
 }
+<a href="#projects">Projects</a>
+  
+<!-- NOVA STUDIO 3.0 — PROJECT SHOWCASE -->
+
+<section id="projects" class="projects-section">
+  <div class="projects-container">
+
+    <div class="projects-heading">
+      <span class="projects-label">THE NOVA COLLECTION</span>
+      <h2>Ideas. Made Visible.</h2>
+      <p>
+        Every great creation starts with an idea.
+        Explore the creative direction and concepts
+        behind the NOVA Studio experience.
+      </p>
+    </div>
+
+    <div class="project-filters">
+      <button class="project-filter active" data-filter="all">All Projects</button>
+      <button class="project-filter" data-filter="branding">Branding</button>
+      <button class="project-filter" data-filter="social">Social Media</button>
+      <button class="project-filter" data-filter="web">Web Design</button>
+      <button class="project-filter" data-filter="video">Video</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card" data-category="branding">
+        <div class="project-visual branding">
+          <span class="project-number">Nº 01 / IDENTITY</span>
+          <div class="project-art">
+            <strong>NOVA</strong>
+            <span>BUILT TO BE DISTINCT</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">Brand Identity · Concept</span>
+          <h3>The Identity Project</h3>
+          <p>
+            A visual direction exploring simplicity,
+            confidence and a memorable brand identity.
+          </p>
+          <a class="project-link"
+             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20branding.">
+             Create my identity ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="social">
+        <div class="project-visual social">
+          <span class="project-number">Nº 02 / SOCIAL</span>
+          <div class="project-art">
+            <strong>CREATE.</strong>
+            <span>CONNECT · INSPIRE</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">Social Media · Concept</span>
+          <h3>The Social Experience</h3>
+          <p>
+            Creative visual concepts designed to
+            give digital content a distinctive identity.
+          </p>
+          <a class="project-link"
+             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20social%20media%20design.">
+             Design my content ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="web">
+        <div class="project-visual web">
+          <span class="project-number">Nº 03 / DIGITAL</span>
+          <div class="project-art">
+            <strong>01—N</strong>
+            <span>DESIGNED FOR DIGITAL</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">Web Design · Concept</span>
+          <h3>The Digital Space</h3>
+          <p>
+            Modern website concepts combining
+            clean layouts and engaging experiences.
+          </p>
+          <a class="project-link"
+             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20a%20website.">
+             Build my website ↗
+          </a>
+        </div>
+      </article>
+
+      <article class="project-card" data-category="video">
+        <div class="project-visual video">
+          <span class="project-number">Nº 04 / MOTION</span>
+          <div class="project-art">
+            <strong>FRAME.</strong>
+            <span>STORY · MOTION · IMPACT</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-type">Video Editing · Concept</span>
+          <h3>The Motion Project</h3>
+          <p>
+            A creative approach to storytelling
+            through motion, rhythm and editing.
+          </p>
+          <a class="project-link"
+             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20video%20editing.">
+             Edit my video ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="projects-cta">
+      <h3>Your idea could be next.</h3>
+      <p>
+        Have a project in mind? Let's turn your
+        vision into something memorable.
+      </p>
+      <a href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20have%20a%20project%20idea.">
+        Start a project ↗
+      </a>
+    </div>
+
+  </div>
+</section>
 
 /* CONTACT */
 
@@ -502,6 +632,233 @@ footer p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* =================================
+   NOVA STUDIO 3.0 — PROJECT SHOWCASE
+================================= */
+
+.projects-section {
+    padding: 100px 7%;
+    background:
+        radial-gradient(circle at 85% 10%, rgba(255,255,255,.07), transparent 30%),
+        #080a0e;
+    color: #fff;
+}
+
+.projects-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.projects-heading {
+    margin-bottom: 38px;
+}
+
+.projects-label {
+    color: #9299a5;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.projects-heading h2 {
+    font-size: clamp(34px, 6vw, 58px);
+    margin: 15px 0;
+    letter-spacing: -2px;
+}
+
+.projects-heading p {
+    color: #a4aab5;
+    max-width: 540px;
+    line-height: 1.8;
+}
+
+.project-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+}
+
+.project-filter {
+    background: #11151c;
+    border: 1px solid #292f39;
+    color: #c5cad3;
+    padding: 11px 19px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .25s ease;
+    font-size: 13px;
+}
+
+.project-filter:hover,
+.project-filter.active {
+    background: #fff;
+    color: #080a0e;
+    border-color: #fff;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.project-card {
+    background: #10141b;
+    border: 1px solid #252b35;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-7px);
+    border-color: #858d9b;
+}
+
+.project-visual {
+    min-height: 230px;
+    padding: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-visual.branding {
+    background: linear-gradient(135deg, #202631, #090b10);
+}
+
+.project-visual.social {
+    background: linear-gradient(135deg, #25252e, #11131a);
+}
+
+.project-visual.web {
+    background: linear-gradient(135deg, #17242b, #090d12);
+}
+
+.project-visual.video {
+    background: linear-gradient(135deg, #29221e, #0d0d10);
+}
+
+.project-art {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.project-art strong {
+    display: block;
+    font-size: clamp(30px, 5vw, 48px);
+    letter-spacing: 5px;
+}
+
+.project-art span {
+    display: block;
+    color: #aab1bd;
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 10px;
+}
+
+.project-number {
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    font-size: 11px;
+    color: #aab1bd;
+    letter-spacing: 2px;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-type {
+    color: #9299a5;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+.project-info p {
+    color: #a4aab5;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    border-bottom: 1px solid #777f8b;
+    padding-bottom: 5px;
+}
+
+.project-link:hover {
+    color: #bfc7d3;
+}
+
+.project-card[hidden] {
+    display: none;
+}
+
+.projects-cta {
+    margin-top: 45px;
+    padding: 35px;
+    border: 1px solid #303641;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #171c25, #0b0e13);
+}
+
+.projects-cta h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.projects-cta p {
+    color: #a4aab5;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.projects-cta a {
+    display: inline-block;
+    background: #fff;
+    color: #080a0e;
+    padding: 13px 22px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .projects-section {
+        padding: 75px 5%;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-visual {
+        min-height: 190px;
+    }
+
+    .projects-cta {
+        padding: 25px;
+    }
 }
 
 /* MOBILE */
@@ -976,9 +1333,7 @@ navLinks.forEach(link => {
 
 
 // UPDATE NAVIGATION WHILE SCROLLING
-const sections = document.querySelectorAll(
-  "#home, #services, #contact"
-);
+document.querySelectorAll("#home, #services, #projects, #contact")
 
 const observer = new IntersectionObserver(entries => {
 
@@ -1004,6 +1359,33 @@ const observer = new IntersectionObserver(entries => {
 });
 
 sections.forEach(section => observer.observe(section));
+
+/* NOVA STUDIO 3.0 — PROJECT FILTERS */
+
+const projectFilters = document.querySelectorAll(".project-filter");
+const projectCards = document.querySelectorAll(".project-card");
+
+projectFilters.forEach(button => {
+    button.addEventListener("click", () => {
+
+        const selectedCategory = button.dataset.filter;
+
+        projectFilters.forEach(filter => {
+            filter.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        projectCards.forEach(card => {
+            const matches =
+                selectedCategory === "all" ||
+                card.dataset.category === selectedCategory;
+
+            card.hidden = !matches;
+        });
+
+    });
+});
 
 </script>
 
