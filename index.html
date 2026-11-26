@@ -4,1391 +4,2093 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="NOVA Studio — Creativity, Precision and Impact. Explore our creative digital services.">
-<title>NOVA Studio | Creativity, Precision and Impact</title>
+<meta name="theme-color" content="#08090d">
+
+<title>NOVA — Create. Connect. Discover.</title>
+
+<meta name="description" content="NOVA is a creative digital ecosystem for design, creators, digital experiences and future template discovery.">
 
 <style>
+/* =====================================
+   NOVA STUDIO 3.0
+   CREATIVITY. PRECISION. IMPACT.
+===================================== */
+
 :root {
-  --bg: #090909;
-  --surface: #141414;
-  --surface2: #1d1d1d;
-  --white: #ffffff;
-  --muted: #a3a3a3;
-  --border: #292929;
-  --accent: #d7d7d7;
+    --bg: #08090d;
+    --surface: #101218;
+    --surface2: #161922;
+    --white: #ffffff;
+    --text: #e9eaf0;
+    --muted: #969ba8;
+    --silver: #c4c9d2;
+    --border: rgba(255,255,255,.10);
+    --accent: #ffffff;
+    --radius: 20px;
+    --max: 1200px;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 115px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 110px;
 }
 
 body {
-  background: var(--bg);
-  color: var(--white);
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* HEADER */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: min(92%, var(--max));
+    margin: auto;
+}
+
+.section {
+    padding: 105px 0;
+}
+
+.section-label {
+    color: var(--silver);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    font-size: clamp(34px, 5vw, 54px);
+    letter-spacing: -2px;
+    line-height: 1.12;
+    margin: 15px 0;
+}
+
+.section-description {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.accent-text {
+    color: var(--silver);
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--silver);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 22px;
+    height: 1px;
+    background: var(--silver);
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 23px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .25s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background: white;
+    color: #090a0e;
+}
+
+.btn-primary:hover {
+    background: #d9dde4;
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    border-color: var(--border);
+    color: white;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: #090a0e;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: .3s ease;
+}
+
+.card:hover {
+    border-color: rgba(255,255,255,.35);
+    transform: translateY(-5px);
+}
+
+/* =====================================
+   HEADER
+===================================== */
 
 .header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(9,9,9,.96);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(8,9,13,.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
 }
 
-.topbar {
-  max-width: 1250px;
-  margin: auto;
-  padding: 17px 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.header-top {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
 }
 
 .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: white;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
 }
 
-.logo {
-  width: 43px;
-  height: 43px;
-  background: white;
-  color: black;
-  display: grid;
-  place-items: center;
-  font-size: 25px;
-  font-weight: 900;
-  border-radius: 12px;
-  transform: skew(-5deg);
+.brand-symbol {
+    width: 39px;
+    height: 39px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    background: white;
+    color: #08090d;
+    font-size: 23px;
+    font-weight: 900;
+    font-style: italic;
 }
 
 .brand-name {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 2px;
 }
 
-.brand-name span {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 5px;
-  color: #aaa;
-  margin-top: 3px;
+.brand-subtitle {
+    color: var(--muted);
+    font-size: 9px;
+    letter-spacing: 3px;
+    display: block;
 }
 
 .header-actions {
-  display: flex;
-  align-items: center;
-  gap: 17px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-.icon-button {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  background: var(--surface);
-  display: grid;
-  place-items: center;
-  color: white;
-  text-decoration: none;
-  transition: .25s;
+.icon-link {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: white;
+    transition: .25s;
 }
 
-.icon-button:hover {
-  background: white;
-  color: black;
-  transform: translateY(-2px);
+.icon-link:hover {
+    background: white;
+    color: black;
 }
 
-.icon-button svg {
-  width: 19px;
-  height: 19px;
+.icon-link svg {
+    width: 17px;
+    height: 17px;
 }
 
-/* NAVIGATION */
+.nav-wrap {
+    border-top: 1px solid rgba(255,255,255,.045);
+}
 
 .navigation {
-  max-width: 1250px;
-  margin: auto;
-  padding: 0 5%;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  overflow-x: auto;
-  scrollbar-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    min-height: 48px;
+    overflow-x: auto;
+    scrollbar-width: none;
 }
 
 .navigation::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .nav-link {
-  color: #aaa;
-  text-decoration: none;
-  padding: 15px 22px;
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  border-bottom: 3px solid transparent;
-  transition: .2s;
+    color: var(--muted);
+    font-size: 12px;
+    white-space: nowrap;
+    padding: 14px 0;
+    position: relative;
+    transition: .2s;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: white;
-  border-bottom-color: white;
+    color: white;
 }
 
-/* GENERAL */
-
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+.nav-link.active::after {
+    content: "";
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
 }
 
-.section {
-  padding: 75px 0;
-}
-
-.eyebrow {
-  color: #aaa;
-  font-size: 11px;
-  letter-spacing: 4px;
-  font-weight: bold;
-  margin-bottom: 17px;
-  text-transform: uppercase;
-}
-
-.section-title {
-  font-size: clamp(30px, 5vw, 48px);
-  letter-spacing: -2px;
-  margin-bottom: 15px;
-}
-
-.section-description {
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 650px;
-  font-size: 15px;
-}
-
-.divider {
-  height: 1px;
-  background: var(--border);
-}
-
-/* HOME */
+/* =====================================
+   HOME / HERO
+===================================== */
 
 .hero {
-  padding: 95px 0 75px;
-  position: relative;
-  overflow: hidden;
+    min-height: 670px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 78% 30%, rgba(160,170,190,.13), transparent 34%),
+        radial-gradient(ellipse at 15% 85%, rgba(255,255,255,.045), transparent 30%),
+        #08090d;
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  right: -170px;
-  top: -130px;
-  background: radial-gradient(circle, #ffffff12, transparent 70%);
-  pointer-events: none;
+    content: "N";
+    position: absolute;
+    right: 3%;
+    top: 2%;
+    font-size: clamp(260px, 45vw, 570px);
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,.025);
+    pointer-events: none;
+    font-style: italic;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
+    position: relative;
+    z-index: 1;
+    padding: 95px 0;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 14px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    color: var(--silver);
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #c8d4ce;
+    box-shadow: 0 0 12px #c8d4ce;
 }
 
 .hero h1 {
-  font-size: clamp(42px, 8vw, 83px);
-  line-height: 1.02;
-  letter-spacing: -4px;
-  max-width: 850px;
-  margin-bottom: 25px;
+    max-width: 820px;
+    font-size: clamp(48px, 8vw, 91px);
+    letter-spacing: -5px;
+    line-height: .99;
+    font-weight: 800;
 }
 
 .hero h1 span {
-  color: #888;
+    color: #9299a8;
 }
 
 .hero-description {
-  color: #aaa;
-  font-size: 16px;
-  line-height: 1.9;
-  max-width: 600px;
-  margin-bottom: 32px;
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 23px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: bold;
-  transition: .25s;
-}
-
-.btn-primary {
-  background: white;
-  color: black;
-}
-
-.btn-primary:hover {
-  background: #cfcfcf;
-  transform: translateY(-3px);
-}
-
-.btn-outline {
-  border: 1px solid #555;
-  color: white;
-}
-
-.btn-outline:hover {
-  background: #222;
-}
-
-/* IDENTITY PANEL */
-
-.identity {
-  background: linear-gradient(130deg,#191919,#0e0e0e);
-  border: 1px solid #303030;
-  border-radius: 16px;
-  padding: 35px;
-  margin-top: 65px;
-  position: relative;
-  overflow: hidden;
-}
-
-.identity::after {
-  content: "N";
-  position: absolute;
-  right: 20px;
-  top: -55px;
-  font-size: 240px;
-  font-weight: 900;
-  color: #ffffff06;
-}
-
-.identity h2 {
-  font-size: clamp(23px,4vw,35px);
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 1;
-}
-
-.identity p {
-  color: #aaa;
-  line-height: 1.8;
-  max-width: 650px;
-  font-size: 14px;
-  position: relative;
-  z-index: 1;
-}
-
-.identity-tag {
-  display: inline-block;
-  color: white;
-  border: 1px solid #555;
-  padding: 8px 13px;
-  border-radius: 30px;
-  font-size: 10px;
-  letter-spacing: 2px;
-  margin-bottom: 22px;
-}
-
-/* VALUES */
-
-.values {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 14px;
-  margin-top: 25px;
-}
-
-.value-card {
-  background: var(--surface);
-  padding: 23px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-}
-
-.value-card h3 {
-  font-size: 16px;
-  margin-bottom: 9px;
-}
-
-.value-card p {
-  color: #999;
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-/* SERVICES */
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 18px;
-  margin-top: 35px;
-}
-
-.service-card {
-  background: linear-gradient(145deg,#191919,#101010);
-  border: 1px solid var(--border);
-  border-radius: 15px;
-  padding: 28px;
-  transition: .3s;
-  position: relative;
-  overflow: hidden;
-}
-
-.service-card:hover {
-  border-color: #888;
-  transform: translateY(-5px);
-  background: #1c1c1c;
-}
-
-.service-icon {
-  width: 49px;
-  height: 49px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: #292929;
-  margin-bottom: 23px;
-}
-
-.service-icon svg {
-  width: 25px;
-  height: 25px;
-}
-
-.service-card h3 {
-  font-size: 21px;
-  margin-bottom: 12px;
-}
-
-.service-card p {
-  color: #999;
-  font-size: 13px;
-  line-height: 1.8;
-  margin-bottom: 20px;
-}
-
-.service-card a {
-  color: white;
-  text-decoration: none;
-  font-size: 12p;
-  font-weight: bold;
-}
-
-.service-card a:hover {
-  text-decoration: underline;
-}
-<a href="#projects">Projects</a>
-  
-<!-- NOVA STUDIO 3.0 — PROJECT SHOWCASE -->
-
-<section id="projects" class="projects-section">
-  <div class="projects-container">
-
-    <div class="projects-heading">
-      <span class="projects-label">THE NOVA COLLECTION</span>
-      <h2>Ideas. Made Visible.</h2>
-      <p>
-        Every great creation starts with an idea.
-        Explore the creative direction and concepts
-        behind the NOVA Studio experience.
-      </p>
-    </div>
-
-    <div class="project-filters">
-      <button class="project-filter active" data-filter="all">All Projects</button>
-      <button class="project-filter" data-filter="branding">Branding</button>
-      <button class="project-filter" data-filter="social">Social Media</button>
-      <button class="project-filter" data-filter="web">Web Design</button>
-      <button class="project-filter" data-filter="video">Video</button>
-    </div>
-
-    <div class="projects-grid">
-
-      <article class="project-card" data-category="branding">
-        <div class="project-visual branding">
-          <span class="project-number">Nº 01 / IDENTITY</span>
-          <div class="project-art">
-            <strong>NOVA</strong>
-            <span>BUILT TO BE DISTINCT</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-type">Brand Identity · Concept</span>
-          <h3>The Identity Project</h3>
-          <p>
-            A visual direction exploring simplicity,
-            confidence and a memorable brand identity.
-          </p>
-          <a class="project-link"
-             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20branding.">
-             Create my identity ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="project-card" data-category="social">
-        <div class="project-visual social">
-          <span class="project-number">Nº 02 / SOCIAL</span>
-          <div class="project-art">
-            <strong>CREATE.</strong>
-            <span>CONNECT · INSPIRE</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-type">Social Media · Concept</span>
-          <h3>The Social Experience</h3>
-          <p>
-            Creative visual concepts designed to
-            give digital content a distinctive identity.
-          </p>
-          <a class="project-link"
-             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20social%20media%20design.">
-             Design my content ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="project-card" data-category="web">
-        <div class="project-visual web">
-          <span class="project-number">Nº 03 / DIGITAL</span>
-          <div class="project-art">
-            <strong>01—N</strong>
-            <span>DESIGNED FOR DIGITAL</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-type">Web Design · Concept</span>
-          <h3>The Digital Space</h3>
-          <p>
-            Modern website concepts combining
-            clean layouts and engaging experiences.
-          </p>
-          <a class="project-link"
-             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20a%20website.">
-             Build my website ↗
-          </a>
-        </div>
-      </article>
-
-      <article class="project-card" data-category="video">
-        <div class="project-visual video">
-          <span class="project-number">Nº 04 / MOTION</span>
-          <div class="project-art">
-            <strong>FRAME.</strong>
-            <span>STORY · MOTION · IMPACT</span>
-          </div>
-        </div>
-        <div class="project-info">
-          <span class="project-type">Video Editing · Concept</span>
-          <h3>The Motion Project</h3>
-          <p>
-            A creative approach to storytelling
-            through motion, rhythm and editing.
-          </p>
-          <a class="project-link"
-             href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20video%20editing.">
-             Edit my video ↗
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="projects-cta">
-      <h3>Your idea could be next.</h3>
-      <p>
-        Have a project in mind? Let's turn your
-        vision into something memorable.
-      </p>
-      <a href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20have%20a%20project%20idea.">
-        Start a project ↗
-      </a>
-    </div>
-
-  </div>
-</section>
-
-/* CONTACT */
-
-.contact-panel {
-  background: linear-gradient(135deg,#202020,#101010);
-  border: 1px solid #383838;
-  border-radius: 17px;
-  padding: 40px;
-  margin-top: 30px;
-}
-
-.contact-panel h3 {
-  font-size: 26px;
-  margin-bottom: 13px;
-}
-
-.contact-panel p {
-  color: #aaa;
-  font-size: 14px;
-  line-height: 1.8;
-  margin-bottom: 24px;
-}
-
-.contact-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-}
-
-.contact-action {
-  display: inline-flex;
-  align-items: center;
-  gap: 11px;
-  color: white;
-  text-decoration: none;
-  background: #292929;
-  border: 1px solid #444;
-  padding: 14px 19px;
-  border-radius: 9px;
-  font-size: 13px;
-  font-weight: bold;
-  transition: .2s;
-}
-
-.contact-action:hover {
-  background: white;
-  color: black;
-}
-
-.contact-action svg {
-  width: 19px;
-  height: 19px;
-}
-
-/* FOOTER */
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 35px 5%;
-  text-align: center;
-}
-
-.footer-brand {
-  font-size: 20px;
-  font-weight: 900;
-  letter-spacing: 3px;
-  margin-bottom: 10px;
-}
-
-footer p {
-  color: #777;
-  font-size: 11px;
-  line-height: 1.9;
-}
-
-/* ANIMATION */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: appear .8s forwards;
-}
-
-@keyframes appear {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* =================================
-   NOVA STUDIO 3.0 — PROJECT SHOWCASE
-================================= */
-
-.projects-section {
-    padding: 100px 7%;
-    background:
-        radial-gradient(circle at 85% 10%, rgba(255,255,255,.07), transparent 30%),
-        #080a0e;
-    color: #fff;
-}
-
-.projects-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.projects-heading {
-    margin-bottom: 38px;
-}
-
-.projects-label {
-    color: #9299a5;
-    font-size: 11px;
-    letter-spacing: 4px;
-    font-weight: 700;
-}
-
-.projects-heading h2 {
-    font-size: clamp(34px, 6vw, 58px);
-    margin: 15px 0;
-    letter-spacing: -2px;
-}
-
-.projects-heading p {
-    color: #a4aab5;
+    color: var(--muted);
     max-width: 540px;
-    line-height: 1.8;
+    font-size: 16px;
+    line-height: 1.9;
+    margin: 28px 0 32px;
 }
 
-.project-filters {
+.hero-buttons {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
-    margin: 32px 0;
+    gap: 13px;
 }
 
-.project-filter {
-    background: #11151c;
-    border: 1px solid #292f39;
-    color: #c5cad3;
-    padding: 11px 19px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: .25s ease;
-    font-size: 13px;
-}
-
-.project-filter:hover,
-.project-filter.active {
-    background: #fff;
-    color: #080a0e;
-    border-color: #fff;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.project-card {
-    background: #10141b;
-    border: 1px solid #252b35;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: transform .3s ease, border-color .3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-7px);
-    border-color: #858d9b;
-}
-
-.project-visual {
-    min-height: 230px;
-    padding: 28px;
+.hero-bottom {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 75px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
 }
 
-.project-visual.branding {
-    background: linear-gradient(135deg, #202631, #090b10);
-}
-
-.project-visual.social {
-    background: linear-gradient(135deg, #25252e, #11131a);
-}
-
-.project-visual.web {
-    background: linear-gradient(135deg, #17242b, #090d12);
-}
-
-.project-visual.video {
-    background: linear-gradient(135deg, #29221e, #0d0d10);
-}
-
-.project-art {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-.project-art strong {
+.hero-stat strong {
     display: block;
-    font-size: clamp(30px, 5vw, 48px);
-    letter-spacing: 5px;
+    font-size: 19px;
+    letter-spacing: 1px;
 }
 
-.project-art span {
-    display: block;
-    color: #aab1bd;
-    font-size: 10px;
-    letter-spacing: 4px;
-    margin-top: 10px;
-}
-
-.project-number {
-    position: absolute;
-    top: 18px;
-    left: 20px;
-    font-size: 11px;
-    color: #aab1bd;
-    letter-spacing: 2px;
-}
-
-.project-info {
-    padding: 25px;
-}
-
-.project-type {
-    color: #9299a5;
+.hero-stat span {
+    color: var(--muted);
     font-size: 10px;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.project-info h3 {
-    font-size: 22px;
-    margin: 12px 0;
+/* =====================================
+   INTRO / VISION
+===================================== */
+
+.vision-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.project-info p {
-    color: #a4aab5;
+.vision-visual {
+    min-height: 330px;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,.12), transparent 38%),
+        linear-gradient(135deg, #171b24, #090a0e);
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.vision-visual::before,
+.vision-visual::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    width: 240px;
+    height: 240px;
+}
+
+.vision-visual::after {
+    width: 310px;
+    height: 310px;
+}
+
+.vision-symbol {
+    font-size: 95px;
+    font-weight: 900;
+    font-style: italic;
+    z-index: 1;
+    text-shadow: 0 0 40px rgba(255,255,255,.25);
+}
+
+.vision-caption {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* =====================================
+   EXPLORE
+===================================== */
+
+.explore-section {
+    background: #0d1016;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin-top: 40px;
+}
+
+.explore-card {
+    min-height: 260px;
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.explore-card::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    border: 1px solid rgba(255,255,255,.10);
+    border-radius: 50%;
+    right: -55px;
+    top: -50px;
+}
+
+.explore-card .card-icon {
+    font-size: 30px;
+}
+
+.explore-card h3 {
+    font-size: 21px;
+    margin-bottom: 8px;
+}
+
+.explore-card p {
+    font-size: 13px;
+    color: var(--muted);
     line-height: 1.7;
-    font-size: 14px;
 }
 
-.project-link {
+.explore-card a {
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 17px;
+    color: white;
+}
+
+/* =====================================
+   SERVICES
+===================================== */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 17px;
+    margin-top: 40px;
+}
+
+.service-card {
+    padding: 30px;
+}
+
+.service-number {
+    color: #747c8a;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.service-icon {
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.service-card a {
     display: inline-block;
     margin-top: 20px;
-    color: #fff;
-    text-decoration: none;
-    font-size: 13px;
-    border-bottom: 1px solid #777f8b;
-    padding-bottom: 5px;
+    color: white;
+    font-size: 12px;
+    border-bottom: 1px solid #777;
+    padding-bottom: 4px;
 }
 
-.project-link:hover {
-    color: #bfc7d3;
+/* =====================================
+   PROJECTS
+===================================== */
+
+.projects-section {
+    background: #0d1016;
+    border-top: 1px solid var(--border);
+}
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 32px 0;
+}
+
+.project-filter {
+    background: #151922;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 10px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.project-filter:hover,
+.project-filter.active {
+    background: white;
+    color: #08090d;
+    border-color: white;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    overflow: hidden;
 }
 
 .project-card[hidden] {
     display: none;
 }
 
-.projects-cta {
-    margin-top: 45px;
-    padding: 35px;
-    border: 1px solid #303641;
-    border-radius: 20px;
-    background: linear-gradient(120deg, #171c25, #0b0e13);
+.project-art {
+    min-height: 230px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.projects-cta h3 {
-    font-size: 25px;
-    margin-bottom: 10px;
+.project-art::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 50%;
 }
 
-.projects-cta p {
-    color: #a4aab5;
-    line-height: 1.7;
-    margin-bottom: 20px;
+.art-one { background: linear-gradient(135deg,#303642,#11131a); }
+.art-two { background: linear-gradient(135deg,#262a33,#101116); }
+.art-three { background: linear-gradient(135deg,#182630,#0c1016); }
+.art-four { background: linear-gradient(135deg,#302a28,#101115); }
+
+.art-title {
+    font-size: 39px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    z-index: 1;
 }
 
-.projects-cta a {
+.art-subtitle {
+    position: absolute;
+    bottom: 22px;
+    color: #b8bec9;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.project-info {
+    padding: 24px;
+}
+
+.project-type {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.project-info h3 {
+    margin: 9px 0;
+    font-size: 21px;
+}
+
+.project-info p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.project-link {
     display: inline-block;
-    background: #fff;
-    color: #080a0e;
-    padding: 13px 22px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 700;
+    margin-top: 18px;
+    font-size: 12px;
+    border-bottom: 1px solid #8a909a;
+    padding-bottom: 5px;
+}
+
+.concept-note {
+    margin-top: 24px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =====================================
+   CREATORS
+===================================== */
+
+.creator-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 17px;
+    margin-top: 38px;
+}
+
+.creator-card {
+    padding: 25px;
+    text-align: center;
+}
+
+.creator-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#e8e8e8,#555c6b);
+    color: #111;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: 900;
+    margin: 0 auto 17px;
+}
+
+.creator-card h3 {
+    font-size: 17px;
+}
+
+.creator-card p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.creator-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 11px;
+    color: var(--silver);
+}
+
+/* =====================================
+   MARKETPLACE PREVIEW
+===================================== */
+
+.market-section {
+    background:
+        radial-gradient(ellipse at 90% 20%,rgba(255,255,255,.08),transparent 40%),
+        #10131a;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.market-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+    margin-top: 40px;
+}
+
+.template-card {
+    overflow: hidden;
+}
+
+.template-art {
+    min-height: 190px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.template-art strong {
+    font-size: 28px;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.template-a { background: linear-gradient(135deg,#303846,#10141d); }
+.template-b { background: linear-gradient(135deg,#403a35,#151515); }
+.template-c { background: linear-gradient(135deg,#242c3c,#10131b); }
+
+.template-info {
+    padding: 18px;
+}
+
+.template-info h3 {
+    font-size: 16px;
+}
+
+.template-info p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.preview-badge {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #d7dbe4;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 9px;
+    margin-top: 12px;
+}
+
+.market-note {
+    margin-top: 25px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* =====================================
+   ABOUT
+===================================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 35px;
+}
+
+.about-panel {
+    padding: 30px;
+}
+
+.about-panel h3 {
+    font-size: 22px;
+    margin-bottom: 13px;
+}
+
+.about-panel p {
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.values-list {
+    margin-top: 22px;
+    display: grid;
+    gap: 12px;
+}
+
+.value-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 13px;
 }
 
-@media (max-width: 650px) {
-    .projects-section {
-        padding: 75px 5%;
-    }
+.value-dot {
+    width: 7px;
+    height: 7px;
+    background: white;
+    border-radius: 50%;
+}
 
-    .projects-grid {
+/* =====================================
+   CONTACT
+===================================== */
+
+.contact-section {
+    background: #0d1016;
+    border-top: 1px solid var(--border);
+}
+
+.contact-panel {
+    padding: 45px;
+    background:
+        radial-gradient(circle at 90% 10%,rgba(255,255,255,.09),transparent 35%),
+        #151922;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-panel h2 {
+    font-size: clamp(30px,5vw,45px);
+    line-height: 1.1;
+    margin: 14px 0;
+}
+
+.contact-panel p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 480px;
+}
+
+.contact-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-width: 190px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+    padding: 65px 0 25px;
+    background: #08090d;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+    border-bottom: 1px solid var(--border);
+}
+
+.footer-about p {
+    color: var(--muted);
+    font-size: 13px;
+    max-width: 310px;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+.footer-column h4 {
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 17px;
+}
+
+.footer-column a {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin: 11px 0;
+    transition: .2s;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 22px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.footer-motto {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 10px;
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    color: black;
+    display: grid;
+    place-items: center;
+    font-size: 19px;
+    cursor: pointer;
+    z-index: 500;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: .25s;
+}
+
+.back-top.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* =====================================
+   RESPONSIVE DESIGN
+===================================== */
+
+@media(max-width:850px) {
+    .vision-grid {
         grid-template-columns: 1fr;
     }
 
-    .project-visual {
-        min-height: 190px;
+    .explore-grid,
+    .creator-grid {
+        grid-template-columns: repeat(2,1fr);
     }
 
-    .projects-cta {
-        padding: 25px;
+    .market-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .contact-panel {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contact-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-about {
+        grid-column: 1/-1;
     }
 }
 
-/* MOBILE */
+@media(max-width:600px) {
+    .section {
+        padding: 75px 0;
+    }
 
-@media(max-width:650px) {
-  .topbar {
-    padding: 13px 4%;
-  }
+    .header-top {
+        min-height: 67px;
+    }
 
-  .brand-name {
-    font-size: 18px;
-  }
+    .brand-name {
+        font-size: 14px;
+    }
 
-  .header-actions {
-    gap: 9px;
-  }
+    .brand-symbol {
+        width: 35px;
+        height: 35px;
+    }
 
-  .icon-button {
-    width: 36px;
-    height: 36px;
-  }
+    .header-actions {
+        gap: 7px;
+    }
 
-  .navigation {
-    padding: 0 3%;
-    gap: 0;
-  }
+    .icon-link {
+        width: 35px;
+        height: 35px;
+    }
 
-  .nav-link {
-    padding: 15px 16px;
-    font-size: 12px;
-  }
+    .navigation {
+        justify-content: flex-start;
+        gap: 23px;
+        min-height: 45px;
+    }
 
-  .hero {
-    padding: 70px 0 50px;
-  }
+    .nav-link {
+        font-size: 11px;
+    }
 
-  .hero h1 {
-    letter-spacing: -2px;
-  }
+    .hero {
+        min-height: 600px;
+    }
 
-  .section {
-    padding: 55px 0;
-  }
+    .hero-content {
+        padding: 75px 0;
+    }
 
-  .values {
-    grid-template-columns: 1fr;
-  }
+    .hero h1 {
+        letter-spacing: -3px;
+    }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
+    .hero-description {
+        font-size: 14px;
+    }
 
-  .identity,
-  .contact-panel {
-    padding: 25px;
-  }
+    .hero-bottom {
+        gap: 23px;
+        margin-top: 55px;
+    }
 
-  .contact-actions {
-    flex-direction: column;
-  }
+    .explore-grid,
+    .services-grid,
+    .projects-grid,
+    .creator-grid,
+    .market-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .contact-action {
-    justify-content: center;
-  }
+    .project-art {
+        min-height: 195px;
+    }
+
+    .service-card,
+    .about-panel {
+        padding: 24px;
+    }
+
+    .contact-panel {
+        padding: 27px;
+    }
+
+    .contact-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact-actions .btn {
+        width: 100%;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 15px;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation: none !important;
-    transition: none !important;
-  }
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- =====================================
+     HEADER
+===================================== -->
+
 <header class="header">
 
-  <div class="topbar">
+    <div class="container header-top">
 
-    <a href="#home" class="brand">
-      <div class="logo">N</div>
-      <div class="brand-name">
-        NOVA
-        <span>STUDIO</span>
-      </div>
-    </a>
+        <a href="#home" class="brand" aria-label="NOVA home">
+            <span class="brand-symbol">N</span>
+            <span>
+                <span class="brand-name">NOVA</span>
+                <span class="brand-subtitle">STUDIO</span>
+            </span>
+        </a>
 
-    <div class="header-actions">
+        <div class="header-actions">
 
-      <!-- WHATSAPP ICON -->
-      <a class="icon-button"
-         href="https://wa.me/27703390719"
-         target="_blank"
-         rel="noopener"
-         aria-label="WhatsApp">
+            <a class="icon-link"
+               href="https://wa.me/27703390719"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="WhatsApp">
 
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8">
-          <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.3A8.4 8.4 0 1 1 21 11.5Z"/>
-          <path d="M9 9c.5 2 2 3.5 4 4l1-1 2 1c-.5 2-2 2-4 1-2-1-4-3-4-4.5 0-1 1-1.5 1-1.5z"/>
-        </svg>
-      </a>
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5.3A8.4 8.4 0 1 1 21 11.5Z"/>
+                    <path d="M8.8 8.4c.3-.6.5-.6.8-.6h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .7.5.8 1.2 1.4 2 1.8.3.2.5.2.7-.1l.7-.8c.2-.2.4-.3.7-.2l1.6.8c.3.1.4.3.4.5 0 .3-.1 1.1-.8 1.6-.6.5-1.4.6-2.2.3-1.1-.3-2.5-1.1-3.8-2.3-1.1-1-2-2.4-2.2-3.4-.2-.7 0-1.2.2-1.6Z"/>
+                </svg>
+            </a>
 
-      <!-- GMAIL ICON -->
-      <a class="icon-button"
-         href="mailto:novafounder8@gmail.com"
-         aria-label="Email">
+            <a class="icon-link"
+               href="mailto:novafounder8@gmail.com"
+               aria-label="Email NOVA">
 
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="1.8">
-          <rect x="3" y="5" width="18" height="14" rx="2"/>
-          <path d="m4 7 8 6 8-6"/>
-        </svg>
-      </a>
+                <svg viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="1.7"
+                     stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2"/>
+                    <path d="m4 7 8 6 8-6"/>
+                </svg>
+            </a>
 
+        </div>
     </div>
-  </div>
 
-  <!-- MAIN NAVIGATION -->
-  <nav class="navigation">
+    <div class="nav-wrap">
+        <nav class="container navigation" aria-label="Main navigation">
 
-    <a href="#home" class="nav-link active">Home</a>
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#explore">Explore</a>
+            <a class="nav-link" href="#services">Services</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#creators">Creators</a>
+            <a class="nav-link" href="#marketplace">Marketplace</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-link" href="#contact">Contact</a>
 
-    <a href="#services" class="nav-link">Services</a>
-
-    <a href="#contact" class="nav-link">Contact</a>
-
-  </nav>
+        </nav>
+    </div>
 
 </header>
 
 
 <main>
 
-  <!-- HOME -->
-  <section class="hero" id="home">
+<!-- =====================================
+     HOME
+===================================== -->
 
-    <div class="container hero-content reveal">
+<section class="hero" id="home">
 
-      <div class="eyebrow">WELCOME TO NOVA STUDIO</div>
+    <div class="container hero-content">
 
-      <h1>
-        Ideas deserve to become
-        <span>extraordinary.</span>
-      </h1>
+        <div class="hero-tag">
+            <span class="status-dot"></span>
+            A NEW CREATIVE EXPERIENCE
+        </div>
 
-      <p class="hero-description">
-        We transform imagination into creative digital experiences.
-        Discover a studio built around design, innovation and
-        meaningful visual impact.
-      </p>
+        <h1>
+            Ideas deserve<br>
+            to become <span>extraordinary.</span>
+        </h1>
 
-      <div class="buttons">
-
-        <a href="#services" class="btn btn-primary">
-          Explore Services ↗
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-          Get in Touch
-        </a>
-
-      </div>
-
-      <div class="identity">
-
-        <div class="identity-tag">WHO WE ARE</div>
-
-        <h2>More than creativity. A vision.</h2>
-
-        <p>
-          NOVA Studio is a creative digital business focused on
-          bringing ideas to life through design, visual communication
-          and digital creativity.
-
-          Our goal is to turn concepts into meaningful work that
-          captures attention and makes an impression.
+        <p class="hero-description">
+            Welcome to NOVA — a creative digital vision
+            built around design, innovation, creators and
+            possibilities. We turn ideas into experiences.
         </p>
 
-      </div>
+        <div class="hero-buttons">
+            <a href="#explore" class="btn btn-primary">
+                Explore NOVA ↗
+            </a>
+
+            <a href="#services" class="btn btn-outline">
+                Discover our services
+            </a>
+        </div>
+
+        <div class="hero-bottom">
+
+            <div class="hero-stat">
+                <strong>01</strong>
+                <span>Creative thinking</span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>02</strong>
+                <span>Digital experiences</span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>03</strong>
+                <span>Future possibilities</span>
+            </div>
+
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <div class="divider"></div>
+<!-- =====================================
+     VISION
+===================================== -->
 
+<section class="section" id="vision">
 
-  <!-- OUR APPROACH -->
-  <section class="section">
+    <div class="container vision-grid reveal">
 
-    <div class="container reveal">
+        <div>
+            <span class="section-label">THE NOVA IDEA</span>
 
-      <div class="eyebrow">OUR PHILOSOPHY</div>
+            <h2 class="section-heading">
+                More than a studio.<br>
+                <span class="accent-text">A growing vision.</span>
+            </h2>
 
-      <h2 class="section-title">
-        Three principles. One vision.
-      </h2>
-
-      <p class="section-description">
-        Everything we create is guided by three principles
-        that define the NOVA Studio identity.
-      </p>
-
-      <div class="values">
-
-        <div class="value-card">
-          <h3>Creativity.</h3>
-          <p>
-            Original thinking and fresh ideas that give
-            every project its own identity.
-          </p>
+            <p class="section-description">
+                NOVA begins with creativity and a passion
+                for digital experiences. Our long-term
+                vision is to bring creators, ideas and
+                digital products together in one connected
+                ecosystem.
+                <br><br>
+                We believe that great ideas deserve a place
+                to grow, connect and reach the world.
+            </p>
         </div>
 
-        <div class="value-card">
-          <h3>Precision.</h3>
-          <p>
-            Attention to detail and thoughtful execution
-            in everything we create.
-          </p>
+        <div class="vision-visual">
+            <div class="vision-symbol">N</div>
+            <span class="vision-caption">
+                THE NEXT CREATIVE EXPERIENCE
+            </span>
         </div>
-
-        <div class="value-card">
-          <h3>Impact.</h3>
-          <p>
-            Work designed to communicate clearly,
-            connect with people and stand out.
-          </p>
-        </div>
-
-      </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <div class="divider"></div>
+<!-- =====================================
+     EXPLORE
+===================================== -->
 
+<section class="section explore-section" id="explore">
 
-  <!-- SERVICES -->
-  <section class="section" id="services">
+    <div class="container">
 
-    <div class="container reveal">
+        <div class="reveal">
+            <span class="section-label">DISCOVER NOVA</span>
 
-      <div class="eyebrow">WHAT WE DO</div>
+            <h2 class="section-heading">
+                Enter the creative world.
+            </h2>
 
-      <h2 class="section-title">
-        Our Services.
-      </h2>
+            <p class="section-description">
+                Explore the different possibilities that
+                make up the NOVA vision.
+            </p>
+        </div>
 
-      <p class="section-description">
-        Creative solutions designed to help ideas take shape.
-        Explore what NOVA Studio can bring to your next project.
-      </p>
+        <div class="explore-grid">
 
-      <div class="services-grid">
+            <article class="card explore-card reveal">
+                <div class="card-icon">✦</div>
 
-        <!-- SERVICE 1 -->
-        <article class="service-card">
+                <div>
+                    <h3>Creative Design</h3>
+                    <p>
+                        Visual identity, graphics and
+                        creative digital experiences.
+                    </p>
+                    <a href="#services">Discover services ↗</a>
+                </div>
+            </article>
 
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.7">
-              <path d="M12 3a9 9 0 1 0 0 18h1.5a2 2 0 0 0 1.5-3.3c-.5-.7 0-1.7 1-1.7h1a4 4 0 0 0 4-4c0-5-4-9-9-9Z"/>
-              <circle cx="7.5" cy="10" r="1"/>
-              <circle cx="11" cy="7" r="1"/>
-              <circle cx="16" cy="9" r="1"/>
-            </svg>
-          </div>
+            <article class="card explore-card reveal">
+                <div class="card-icon">◈</div>
 
-          <h3>Graphic Design</h3>
+                <div>
+                    <h3>Creator Community</h3>
+                    <p>
+                        A future space for designers and
+                        creative minds to connect.
+                    </p>
+                    <a href="#creators">Meet the vision ↗</a>
+                </div>
+            </article>
 
-          <p>
-            Creative visuals, promotional graphics, digital designs
-            and visual content that communicate your ideas.
-          </p>
+            <article class="card explore-card reveal">
+                <div class="card-icon">▣</div>
 
-          <a href="#contact">Discuss a Project ↗</a>
+                <div>
+                    <h3>Digital Marketplace</h3>
+                    <p>
+                        A future destination for discovering
+                        and sharing digital templates.
+                    </p>
+                    <a href="#marketplace">Explore the preview ↗</a>
+                </div>
+            </article>
 
-        </article>
-
-
-        <!-- SERVICE 2 -->
-        <article class="service-card">
-
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.7">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="m10 9 5 3-5 3z"/>
-            </svg>
-          </div>
-
-          <h3>Video Editing</h3>
-
-          <p>
-            Engaging video content, social media edits,
-            storytelling and polished visual presentations.
-          </p>
-
-          <a href="#contact">Discuss a Project ↗</a>
-
-        </article>
-
-
-        <!-- SERVICE 3 -->
-        <article class="service-card">
-
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.7">
-              <path d="M12 3 3 8l9 5 9-5-9-5Z"/>
-              <path d="m3 12 9 5 9-5"/>
-              <path d="m3 16 9 5 9-5"/>
-            </svg>
-          </div>
-
-          <h3>Branding & Identity</h3>
-
-          <p>
-            Visual identity concepts, brand presentation
-            and creative direction for memorable brands.
-          </p>
-
-          <a href="#contact">Discuss a Project ↗</a>
-
-        </article>
-
-
-        <!-- SERVICE 4 -->
-        <article class="service-card">
-
-          <div class="service-icon">
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="1.7">
-              <rect x="3" y="4" width="18" height="16" rx="2"/>
-              <path d="M3 9h18M9 20V9"/>
-              <path d="m13 13 2 2 3-3"/>
-            </svg>
-          </div>
-
-          <h3>Digital Experiences</h3>
-
-          <p>
-            Website concepts and digital presentations
-            that give businesses a strong online presence.
-          </p>
-
-          <a href="#contact">Discuss a Project ↗</a>
-
-        </article>
-
-      </div>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <div class="divider"></div>
+<!-- =====================================
+     SERVICES
+===================================== -->
+
+<section class="section" id="services">
+
+    <div class="container">
+
+        <div class="reveal">
+            <span class="section-label">WHAT WE CREATE</span>
+
+            <h2 class="section-heading">
+                Creative services.<br>
+                <span class="accent-text">Designed with purpose.</span>
+            </h2>
+
+            <p class="section-description">
+                NOVA Studio brings ideas to life through
+                visual creativity and digital design.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <article class="card service-card reveal">
+                <span class="service-number">SERVICE 01</span>
+                <div class="service-icon">✧</div>
+                <h3>Graphic Design</h3>
+                <p>
+                    Creative visual designs, promotional
+                    graphics and digital content built
+                    to communicate ideas.
+                </p>
+                <a href="#contact">Discuss a design ↗</a>
+            </article>
+
+            <article class="card service-card reveal">
+                <span class="service-number">SERVICE 02</span>
+                <div class="service-icon">▶</div>
+                <h3>Video Editing</h3>
+                <p>
+                    Engaging video experiences through
+                    editing, storytelling, transitions
+                    and visual presentation.
+                </p>
+                <a href="#contact">Discuss a video ↗</a>
+            </article>
+
+            <article class="card service-card reveal">
+                <span class="service-number">SERVICE 03</span>
+                <div class="service-icon">◉</div>
+                <h3>Branding & Identity</h3>
+                <p>
+                    Distinctive visual identities that
+                    help businesses communicate their
+                    personality and purpose.
+                </p>
+                <a href="#contact">Build an identity ↗</a>
+            </article>
+
+            <article class="card service-card reveal">
+                <span class="service-number">SERVICE 04</span>
+                <div class="service-icon">⌘</div>
+                <h3>Web Design</h3>
+                <p>
+                    Modern website concepts and digital
+                    experiences designed with usability,
+                    structure and creativity.
+                </p>
+                <a href="#contact">Discuss a website ↗</a>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-  <!-- CONTACT -->
-  <section class="section" id="contact">
+<!-- =====================================
+     PROJECTS
+===================================== -->
 
-    <div class="container reveal">
+<section class="section projects-section" id="projects">
 
-      <div class="eyebrow">LET'S CONNECT</div>
+    <div class="container">
 
-      <h2 class="section-title">
-        Every great idea starts somewhere.
-      </h2>
+        <div class="reveal">
+            <span class="section-label">THE NOVA COLLECTION</span>
 
-      <p class="section-description">
-        Have a project in mind or want to work with NOVA Studio?
-        Get in touch through our official contact channels.
-      </p>
+            <h2 class="section-heading">
+                Ideas. Made visible.
+            </h2>
 
-      <div class="contact-panel">
+            <p class="section-description">
+                A showcase of creative directions and
+                concept projects representing the NOVA
+                approach to digital design.
+            </p>
+        </div>
 
-        <h3>Let's create something meaningful.</h3>
+        <div class="project-filters reveal">
 
-        <p>
-          Choose your preferred way to contact NOVA Studio.
-          We're ready to hear about your ideas.
+            <button class="project-filter active" data-filter="all">
+                All projects
+            </button>
+
+            <button class="project-filter" data-filter="branding">
+                Branding
+            </button>
+
+            <button class="project-filter" data-filter="social">
+                Social media
+            </button>
+
+            <button class="project-filter" data-filter="web">
+                Web design
+            </button>
+
+            <button class="project-filter" data-filter="video">
+                Video
+            </button>
+
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="card project-card reveal"
+                     data-category="branding">
+
+                <div class="project-art art-one">
+                    <span class="art-title">NOVA</span>
+                    <span class="art-subtitle">BUILT TO BE DISTINCT</span>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-type">Brand identity · Concept</span>
+                    <h3>The Identity Project</h3>
+                    <p>
+                        A visual direction exploring
+                        simplicity, confidence and
+                        distinctive branding.
+                    </p>
+                    <a class="project-link"
+                       href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20branding.">
+                        Create my identity ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="card project-card reveal"
+                     data-category="social">
+
+                <div class="project-art art-two">
+                    <span class="art-title">CREATE.</span>
+                    <span class="art-subtitle">CONNECT · INSPIRE</span>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-type">Social media · Concept</span>
+                    <h3>The Social Experience</h3>
+                    <p>
+                        Creative visual directions
+                        for digital content and
+                        social media communication.
+                    </p>
+                    <a class="project-link"
+                       href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20social%20media%20design.">
+                        Design my content ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="card project-card reveal"
+                     data-category="web">
+
+                <div class="project-art art-three">
+                    <span class="art-title">01—N</span>
+                    <span class="art-subtitle">DESIGNED FOR DIGITAL</span>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-type">Web design · Concept</span>
+                    <h3>The Digital Space</h3>
+                    <p>
+                        Modern website concepts
+                        combining clean layouts
+                        and engaging experiences.
+                    </p>
+                    <a class="project-link"
+                       href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20am%20interested%20in%20a%20website.">
+                        Build my website ↗
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="card project-card reveal"
+                     data-category="video">
+
+                <div class="project-art art-four">
+                    <span class="art-title">FRAME.</span>
+                    <span class="art-subtitle">STORY · MOTION · IMPACT</span>
+                </div>
+
+                <div class="project-info">
+                    <span class="project-type">Video editing · Concept</span>
+                    <h3>The Motion Project</h3>
+                    <p>
+                        A creative direction focused
+                        on storytelling, rhythm
+                        and visual editing.
+                    </p>
+                    <a class="project-link"
+                       href="https://wa.me/27703390719?text=Hi%20NOVA%20Studio%2C%20I%20need%20video%20editing.">
+                        Edit my video ↗
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+        <p class="concept-note">
+            Note: These are illustrative concept designs,
+            not completed client projects.
         </p>
 
-        <div class="contact-actions">
+    </div>
 
-          <a class="contact-action"
-             href="https://wa.me/27703390719"
-             target="_blank"
-             rel="noopener">
+</section>
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.8">
-              <path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2-5.3A8.4 8.4 0 1 1 21 11.5Z"/>
-            </svg>
 
-            WhatsApp Us ↗
+<!-- =====================================
+     CREATORS
+===================================== -->
 
-          </a>
+<section class="section" id="creators">
 
-          <a class="contact-action"
-             href="mailto:novafounder8@gmail.com">
+    <div class="container">
 
-            <svg viewBox="0 0 24 24" fill="none"
-                 stroke="currentColor" stroke-width="1.8">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <path d="m4 7 8 6 8-6"/>
-            </svg>
+        <div class="reveal">
+            <span class="section-label">THE PEOPLE BEHIND IDEAS</span>
 
-            Email NOVA Studio ↗
+            <h2 class="section-heading">
+                A future built by creators.
+            </h2>
 
-          </a>
+            <p class="section-description">
+                NOVA envisions a creative community
+                where people can share their work,
+                discover talent and inspire each other.
+            </p>
+        </div>
+
+        <div class="creator-grid">
+
+            <article class="card creator-card reveal">
+                <div class="creator-avatar">D</div>
+                <h3>Digital Designers</h3>
+                <p>Visual creativity and design.</p>
+                <span class="creator-tag">CREATOR CATEGORY</span>
+            </article>
+
+            <article class="card creator-card reveal">
+                <div class="creator-avatar">V</div>
+                <h3>Visual Artists</h3>
+                <p>Art, illustration and imagination.</p>
+                <span class="creator-tag">CREATOR CATEGORY</span>
+            </article>
+
+            <article class="card creator-card reveal">
+                <div class="creator-avatar">T</div>
+                <h3>Template Creators</h3>
+                <p>Digital resources and templates.</p>
+                <span class="creator-tag">CREATOR CATEGORY</span>
+            </article>
 
         </div>
 
-      </div>
+        <p class="concept-note">
+            Creator profiles and community registration
+            are planned for a future development stage.
+        </p>
 
     </div>
 
-  </section>
+</section>
+
+
+<!-- =====================================
+     MARKETPLACE PREVIEW
+===================================== -->
+
+<section class="section market-section" id="marketplace">
+
+    <div class="container">
+
+        <div class="reveal">
+            <span class="section-label">THE FUTURE OF DISCOVERY</span>
+
+            <h2 class="section-heading">
+                A marketplace of creativity.
+            </h2>
+
+            <p class="section-description">
+                Imagine a place where creators can
+                share digital templates and people
+                can discover resources for their ideas.
+                This is the beginning of that vision.
+            </p>
+        </div>
+
+        <div class="market-grid">
+
+            <article class="card template-card reveal">
+                <div class="template-art template-a">
+                    <strong>BRAND<br>IDENTITY</strong>
+                </div>
+                <div class="template-info">
+                    <h3>Branding Templates</h3>
+                    <p>Visual identity concepts and resources.</p>
+                    <span class="preview-badge">FUTURE CATEGORY</span>
+                </div>
+            </article>
+
+            <article class="card template-card reveal">
+                <div class="template-art template-b">
+                    <strong>SOCIAL<br>DESIGN</strong>
+                </div>
+                <div class="template-info">
+                    <h3>Social Templates</h3>
+                    <p>Creative social media layouts.</p>
+                    <span class="preview-badge">FUTURE CATEGORY</span>
+                </div>
+            </article>
+
+            <article class="card template-card reveal">
+                <div class="template-art template-c">
+                    <strong>DIGITAL<br>CREATION</strong>
+                </div>
+                <div class="template-info">
+                    <h3>Digital Resources</h3>
+                    <p>Resources for creative projects.</p>
+                    <span class="preview-badge">FUTURE CATEGORY</span>
+                </div>
+            </article>
+
+        </div>
+
+        <p class="market-note">
+            Marketplace listings, creator uploads,
+            purchases and payments are not active yet.
+            These are previews of the future platform.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     ABOUT
+===================================== -->
+
+<section class="section" id="about">
+
+    <div class="container">
+
+        <div class="reveal">
+            <span class="section-label">GET TO KNOW NOVA</span>
+
+            <h2 class="section-heading">
+                Built on a bigger idea.
+            </h2>
+
+            <p class="section-description">
+                NOVA is a creative initiative focused
+                on making digital ideas more accessible,
+                expressive and connected.
+            </p>
+        </div>
+
+        <div class="about-grid">
+
+            <article class="card about-panel reveal">
+                <h3>Our Mission</h3>
+                <p>
+                    To turn creative ideas into meaningful
+                    digital experiences and create
+                    opportunities for people to express,
+                    develop and share their creativity.
+                </p>
+            </article>
+
+            <article class="card about-panel reveal">
+                <h3>Our Vision</h3>
+                <p>
+                    To grow into a connected creative
+                    ecosystem where creators, digital
+                    products and communities can
+                    discover new possibilities together.
+                </p>
+            </article>
+
+            <article class="card about-panel reveal">
+                <h3>Our Identity</h3>
+                <p>
+                    NOVA represents innovation,
+                    imagination and the ambition
+                    to build something distinctive.
+                </p>
+
+                <div class="values-list">
+                    <div class="value-item">
+                        <span class="value-dot"></span>
+                        Creativity
+                    </div>
+
+                    <div class="value-item">
+                        <span class="value-dot"></span>
+                        Precision
+                    </div>
+
+                    <div class="value-item">
+                        <span class="value-dot"></span>
+                        Impact
+                    </div>
+                </div>
+            </article>
+
+            <article class="card about-panel reveal">
+                <h3>Our Philosophy</h3>
+                <p>
+                    Start with an idea. Build with
+                    purpose. Improve through experience.
+                    Every great digital experience
+                    begins with a first step.
+                </p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     CONTACT
+===================================== -->
+
+<section class="section contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-panel reveal">
+
+            <div>
+                <span class="section-label">LET'S CONNECT</span>
+
+                <h2>
+                    Have an idea?<br>
+                    <span class="accent-text">Let's create something.</span>
+                </h2>
+
+                <p>
+                    Whether you have a design idea,
+                    a business project or a question
+                    about NOVA, we'd love to hear from you.
+                </p>
+            </div>
+
+            <div class="contact-actions">
+
+                <a class="btn btn-primary"
+                   href="https://wa.me/27703390719?text=Hello%20NOVA%20Studio%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    WhatsApp us ↗
+                </a>
+
+                <a class="btn btn-outline"
+                   href="mailto:novafounder8@gmail.com?subject=NOVA%20Studio%20Enquiry">
+                    Send an email ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
 
-<!-- FOOTER -->
-<footer>
+<!-- =====================================
+     FOOTER
+===================================== -->
 
-  <div class="footer-brand">NOVA STUDIO</div>
+<footer class="footer">
 
-  <p>Creativity. Precision. Impact.</p>
+    <div class="container">
 
-  <p>
-    © <span id="year"></span> NOVA Studio.
-    All rights reserved.
-  </p>
+        <div class="footer-main">
+
+            <div class="footer-about">
+
+                <a href="#home" class="brand">
+                    <span class="brand-symbol">N</span>
+                    <span>
+                        <span class="brand-name">NOVA</span>
+                        <span class="brand-subtitle">STUDIO</span>
+                    </span>
+                </a>
+
+                <p>
+                    A creative digital vision built
+                    around ideas, innovation and
+                    the possibilities of tomorrow.
+                </p>
+
+            </div>
+
+            <div class="footer-column">
+                <h4>EXPLORE</h4>
+                <a href="#home">Home</a>
+                <a href="#explore">Explore</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+            </div>
+
+            <div class="footer-column">
+                <h4>NOVA</h4>
+                <a href="#creators">Creators</a>
+                <a href="#marketplace">Marketplace</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> NOVA Studio.
+                All rights reserved.
+            </span>
+
+            <span class="footer-motto">
+                CREATIVITY. PRECISION. IMPACT.
+            </span>
+
+        </div>
+
+    </div>
 
 </footer>
 
 
+<button class="back-top" id="backTop"
+        aria-label="Back to top">
+    ↑
+</button>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
 <script>
 
-// CURRENT YEAR
+/* CURRENT YEAR */
+
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+    new Date().getFullYear();
 
 
-// NAVIGATION ACTIVE STATE
-const navLinks = document.querySelectorAll(".nav-link");
+/* PROJECT FILTERS */
 
-navLinks.forEach(link => {
+const filterButtons =
+    document.querySelectorAll(".project-filter");
 
-  link.addEventListener("click", function() {
+const projectCards =
+    document.querySelectorAll(".project-card");
 
-    navLinks.forEach(item =>
-      item.classList.remove("active")
-    );
+filterButtons.forEach(button => {
 
-    this.classList.add("active");
-
-  });
-
-});
-
-
-// UPDATE NAVIGATION WHILE SCROLLING
-document.querySelectorAll("#home, #services, #projects, #contact")
-
-const observer = new IntersectionObserver(entries => {
-
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      navLinks.forEach(link => {
-
-        link.classList.toggle(
-          "active",
-          link.getAttribute("href") === "#" + entry.target.id
-        );
-
-      });
-
-    }
-
-  });
-
-}, {
-  threshold: 0.35
-});
-
-sections.forEach(section => observer.observe(section));
-
-/* NOVA STUDIO 3.0 — PROJECT FILTERS */
-
-const projectFilters = document.querySelectorAll(".project-filter");
-const projectCards = document.querySelectorAll(".project-card");
-
-projectFilters.forEach(button => {
     button.addEventListener("click", () => {
 
-        const selectedCategory = button.dataset.filter;
+        const category = button.dataset.filter;
 
-        projectFilters.forEach(filter => {
-            filter.classList.remove("active");
+        filterButtons.forEach(item => {
+            item.classList.remove("active");
         });
 
         button.classList.add("active");
 
         projectCards.forEach(card => {
+
             const matches =
-                selectedCategory === "all" ||
-                card.dataset.category === selectedCategory;
+                category === "all" ||
+                card.dataset.category === category;
 
             card.hidden = !matches;
+
         });
 
     });
+
+});
+
+
+/* ACTIVE NAVIGATION */
+
+const navigationLinks =
+    document.querySelectorAll(".nav-link");
+
+const trackedSections =
+    document.querySelectorAll("main section[id]");
+
+if ("IntersectionObserver" in window) {
+
+    const sectionObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                navigationLinks.forEach(link => {
+
+                    const isActive =
+                        link.getAttribute("href") ===
+                        "#" + entry.target.id;
+
+                    link.classList.toggle("active", isActive);
+
+                });
+
+            }
+
+        });
+
+    }, {
+        rootMargin: "-25% 0px -60% 0px"
+    });
+
+    trackedSections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+}
+
+
+/* SCROLL REVEAL */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.10
+    });
+
+    revealElements.forEach(element => {
+        revealObserver.observe(element);
+    });
+
+} else {
+
+    revealElements.forEach(element => {
+        element.classList.add("visible");
+    });
+
+}
+
+
+/* BACK TO TOP */
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 450) {
+        backTop.classList.add("show");
+    } else {
+        backTop.classList.remove("show");
+    }
+
+});
+
+backTop.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
 });
 
 </script>
 
 </body>
 </html>
+
 
